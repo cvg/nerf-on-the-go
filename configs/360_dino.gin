@@ -1,0 +1,25 @@
+Config.dataset_loader = 'on-the-go'
+Config.near = 0.2
+Config.far = 1e6
+Config.factor = 8
+
+Config.patch_size = 32
+Config.data_loss_type = 'dino_ssim'
+Config.enable_robustnerf_loss = False
+Config.compute_feature_metrics = True
+
+Model.raydist_fn = @jnp.reciprocal
+Model.opaque_background = True
+Model.num_glo_features = 4
+
+
+PropMLP.warp_fn = @coord.contract
+PropMLP.net_depth = 4
+PropMLP.net_width = 256
+PropMLP.disable_density_normals = True
+PropMLP.disable_rgb = True
+
+NerfMLP.warp_fn = @coord.contract
+NerfMLP.net_depth = 8
+NerfMLP.net_width = 1024
+NerfMLP.disable_density_normals = True
