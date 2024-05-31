@@ -17,7 +17,7 @@
   </p>
   <p align="center"><strong>(* Equal Contribution)</strong></p>
   <h2 align="center">CVPR 2024</h2>
-  <h3 align="center"><a href="https://arxiv.org/abs/2405.18715">Paper</a> | <a href="https://youtu.be/mUQ_LOyonB0?si=uacxom-6ur7_oGRw">Video</a> | <a href="https://nerf-on-the-go.github.io/">Project Page</a></h3>
+  <h3 align="center"><a href="https://arxiv.org/abs/2405.18715">Paper</a> | <a href="https://youtu.be/mUQ_LOyonB0?si=uacxom-6ur7_oGRw">Video</a> | <a href="https://rwn17.github.io/nerf-on-the-go/">Project Page</a></h3>
   <p align="center">
   <a href="">
     <img src="./media/teaser.gif" alt="Logo" width="80%">
