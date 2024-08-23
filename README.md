@@ -57,7 +57,7 @@
 
 ## Description
 
-This repository hosts the official Jax implementation of the paper "NeRF <em>on-the-go</em>: Exploiting Uncertainty for Distractor-free NeRFs in the Wild" (CVPR 2024). For more details, please visit our [project webpage](https://nerf-on-the-go.github.io/).
+This repository hosts the official Jax implementation of the paper "NeRF <em>on-the-go</em>: Exploiting Uncertainty for Distractor-free NeRFs in the Wild" (CVPR 2024). For more details, please visit our [project webpage](https://rwn17.github.io/nerf-on-the-go/).
 
 This Repo is built upon [Multinerf](https://github.com/google-research/multinerf) codebase.
 
