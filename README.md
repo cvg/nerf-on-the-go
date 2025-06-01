@@ -46,6 +46,9 @@
       <a href="#Running">Running</a>
     </li>
     <li>
+      <a href="#Checkpoint">Checkpoint</a>
+    </li>
+    <li>
       <a href="#Citation">Citation</a>
     </li>
     <li>
@@ -89,8 +92,7 @@ git clone https://github.com/rmbrualla/pycolmap.git ./internal/pycolmap
 You'll also need to update your [JAX](https://jax.readthedocs.io/en/latest/installation.html) installation to support GPUs or TPUs.
 
 ```
-pip install  jax==0.4.26 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
-pip install  jaxlib==0.4.26+cuda12.cudnn89 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+pip install -U "jax[cuda12]"
 ```
 
 ### Instructions for ETH Euler
@@ -126,11 +128,18 @@ But it's fine. The Euler supports up to CUDA 12.1, while JAX now requires a mini
 ## Dataset Preparation
 
 ### Downloading the Dataset
+
+Before process data, please make sure you install mogrify by
+
+```
+conda install -y -c conda-forge imagemagick
+```
+
 To download the "On-the-go" dataset, execute the following command:
 ```bash
 bash ./scripts/download_on-the-go.sh
 ```
-This script not only downloads the dataset but also downsamples the images as required.
+This script not only downloads the dataset but also downsamples the images as required. **NOTE: Please double check whether the data has been correctly DOWNSAMPLED!**
 
 ### Feature Extraction with DINOv2
 For extracting features using the DINOv2, use the command below:
@@ -202,11 +211,14 @@ errors. If you do this, but want to preserve quality, be sure to increase the nu
 of training iterations and decrease the learning rate by whatever scale factor you
 decrease batch size by. 
 
+## Checkpoint
+We release the ckpt for quantatitive scenes [here](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/weining_connect_hku_hk/ER2Esfrn0plAjCa2I6G2BJ4B56qX4B5whdMgk5T90A_F-A?e=3gklLp). 
 
-## Todo
+ Scene | Mountain | Fountain | Corner | Patio | Spot | Patio-High
+-- | -- | -- | -- | -- | -- | --
+onthego (paper) | 20.15 | 20.11 | 24.22 | 20.78 | 23.33 | 21.41
+onthego (released ckpt) | 20.89 |  19.88 | 24.69 | 22.30 | 24.67 | 22.30
 
-- [ ] Custom dataset tutorial
-- [ ] Support LPIPS calculation
  
 ## Citation
 
@@ -233,4 +245,4 @@ Also, this code is built upon multinerf, feel free to cite this entire codebase 
 ```
 
 ## Contact
-If there is any problem, please contact Weining by ren.weining@connect.hku.hk
+If there is any problem, please contact Weining by weining@connect.hku.hk
